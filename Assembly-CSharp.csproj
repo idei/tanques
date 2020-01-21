@@ -46,7 +46,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Bala.cs" />
-     <Compile Include="Assets\Scripts\Disparador.cs" />
      <Compile Include="Assets\Scripts\Globales.cs" />
      <Compile Include="Assets\Scripts\Movimiento.cs" />
      <Compile Include="Assets\Scripts\Presentación.cs" />

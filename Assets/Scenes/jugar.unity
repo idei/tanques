@@ -7807,7 +7807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea9b7f5b5239e84e9e38107ef46f52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bala: {fileID: 251872506724259872}
+  modeloBala: {fileID: 251872506724259872}
   fuego: {fileID: 1611813271}
   baseTanque: {fileID: 674373983}
   inicioTanque: {fileID: 1614343392}
@@ -7957,7 +7957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea9b7f5b5239e84e9e38107ef46f52d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bala: {fileID: 3654179983742452327}
+  modeloBala: {fileID: 3654179983742452327}
   fuego: {fileID: 921487941}
   baseTanque: {fileID: 2123110223}
   inicioTanque: {fileID: 2044451690}

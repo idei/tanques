@@ -47,15 +47,11 @@ public class Bala : MonoBehaviour
 
     IEnumerator _explotar()
     {
-        //GameObject.Destroy(gameObject, 1f);
+        GameObject.Destroy(gameObject, 1f);
         GetComponent<ConstantForce2D>().force = Vector2.zero;
         rigid.velocity = Vector2.zero;
-
         ruidoExplosion.Play();
         explosion.SetActive(true);
         yield return new WaitForSeconds(1f);
-        
-        explosion.SetActive(false);
-        gameObject.SetActive(false);
     }
 }

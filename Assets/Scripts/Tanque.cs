@@ -3,42 +3,12 @@ using UnityEngine;
 
 public class Tanque : MonoBehaviour
 {
-    const int TAMAÑO_POOL_BALAS = 20;
-    public GameObject bala;
+    public GameObject modeloBala;
     public GameObject fuego;
     public GameObject baseTanque;
     public GameObject inicioTanque;
     public KeyCode disparar;
-
     private Transform bandera = null;
-    private Bala[] poolBalas = new Bala[TAMAÑO_POOL_BALAS];
-
-    void Awake()
-    {
-        bala.SetActive(false);
-        for (int i = 0; i < TAMAÑO_POOL_BALAS; i++)
-        {
-            poolBalas[i] = GameObject.Instantiate(bala).GetComponent<Bala>();
-        }
-    }
-
-    private void Disparar()
-    {
-        Bala found = null;
-        foreach (Bala bala in poolBalas)
-        {
-            if (!bala.gameObject.activeInHierarchy)
-            {
-                found = bala;
-                break;
-            }
-        }
-        if (found != null)
-        {
-            StartCoroutine(mostrarFuego());
-            found.Disparar(fuego.transform);
-        }
-    }
 
     private IEnumerator mostrarFuego()
     {
@@ -54,7 +24,8 @@ public class Tanque : MonoBehaviour
         if (tag == "Azul")
         {
             Globales.puntajeRojo++;
-        } else
+        }
+        else
         {
             Globales.puntajeAzul++;
         }
@@ -91,7 +62,10 @@ public class Tanque : MonoBehaviour
     {
         if (Input.GetKeyDown(disparar))
         {
-            Disparar();
+            GameObject copiaBala = GameObject.Instantiate(modeloBala);
+            Bala bala = copiaBala.GetComponent<Bala>();
+            bala.Disparar(fuego.transform);
+            StartCoroutine(mostrarFuego());
         }
     }
 }
