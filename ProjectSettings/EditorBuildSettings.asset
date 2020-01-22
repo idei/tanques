@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: "Assets/Scenes/presentaci\xF3n.unity"
+    path: "Assets/Escenas/presentaci\xF3n.unity"
     guid: 1edb69527afa7c9468ecfd49f153dfe9
   - enabled: 1
-    path: Assets/Scenes/jugar.unity
+    path: Assets/Escenas/jugar.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/resultados.unity
+    path: Assets/Escenas/resultados.unity
     guid: 4aa373585365efc43b3ad213d61b1b8e
   m_configObjects: {}

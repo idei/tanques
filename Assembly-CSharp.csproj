@@ -45,13 +45,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Bala.cs" />
-     <Compile Include="Assets\Scripts\Globales.cs" />
-     <Compile Include="Assets\Scripts\Movimiento.cs" />
-     <Compile Include="Assets\Scripts\Presentación.cs" />
-     <Compile Include="Assets\Scripts\Resultados.cs" />
-     <Compile Include="Assets\Scripts\Tanque.cs" />
-     <Compile Include="Assets\Scripts\Temporizador.cs" />
+     <Compile Include="Assets\Códigos\Bala.cs" />
+     <Compile Include="Assets\Códigos\Globales.cs" />
+     <Compile Include="Assets\Códigos\Movimiento.cs" />
+     <Compile Include="Assets\Códigos\Movimiento2.cs" />
+     <Compile Include="Assets\Códigos\Presentación.cs" />
+     <Compile Include="Assets\Códigos\Resultados.cs" />
+     <Compile Include="Assets\Códigos\Tanque.cs" />
+     <Compile Include="Assets\Códigos\Temporizador.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -87,10 +88,8 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-     <None Include="Assets\Tile Images\Spritesheet\allSprites_default.xml" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-     <None Include="Assets\Tile Images\Spritesheet\onlyObjects_default.xml" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -98,13 +97,11 @@
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
      <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-     <None Include="Assets\Tile Images\Spritesheet\onlyObjects_retina.xml" />
-     <None Include="Assets\Tile Images\License.txt" />
+     <None Include="Assets\Imágenes\License.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
-     <None Include="Assets\Tile Images\Spritesheet\allSprites_retina.xml" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
