@@ -2,49 +2,51 @@
 
 public class Movimiento2 : MonoBehaviour
 {
-    public float velocidad;
+    public float fuerza;
+    public Transform oruga_izquierda;
+    public Transform oruga_derecha;
     public KeyCode teclaArriba;
     public KeyCode teclaDerecha;
     public KeyCode teclaAbajo;
     public KeyCode teclaIzquierda;
     private Rigidbody2D rígido;
+    private ConstantForce2D motor;
 
     void Start()
     {
+        motor = GetComponent<ConstantForce2D>();
         rígido = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
-        float h = 0;
-        float v = 0;
+        float rotación = 0f;
+        float direcciónMotor = 0f;
+        rígido.centerOfMass = Vector2.zero;
 
         if (Input.GetKey(teclaDerecha))
         {
-            h = 1;
+            rígido.centerOfMass = oruga_derecha.localPosition;
+            rotación = -fuerza;
+            rígido.velocity = Vector2.zero;
         }
         if (Input.GetKey(teclaIzquierda))
         {
-            h = -1;
+            rígido.centerOfMass = oruga_izquierda.localPosition;
+            rotación = fuerza;
+            rígido.velocity = Vector2.zero;
         }
         if (Input.GetKey(teclaArriba))
         {
-            v = 1;
+            direcciónMotor = 1f;
+            rígido.angularVelocity = 0f;
         }
         if (Input.GetKey(teclaAbajo))
         {
-            v = -1;
+            direcciónMotor = -1f;
+            rígido.angularVelocity = 0f;
         }
-
-        Vector2 tempVect = new Vector2(h, v);
-        Vector2 pos = rígido.transform.position;
-
-        if (tempVect != Vector2.zero)
-        {
-            rígido.rotation = Vector2.SignedAngle(Vector2.up, tempVect);
-        }
-
-        tempVect = tempVect * velocidad * Time.fixedDeltaTime;
-        rígido.MovePosition(pos + tempVect);
+        motor.force = transform.rotation * Vector2.up * direcciónMotor * fuerza;
+        motor.torque = rotación;
     }
 }
