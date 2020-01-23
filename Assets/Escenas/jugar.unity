@@ -149,7 +149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1181896827}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &18281141
 SpriteRenderer:
@@ -7378,6 +7378,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &764045449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 764045450}
+  m_Layer: 0
+  m_Name: oruga_izquierda
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &764045450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764045449}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1181896827}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &787160900
 GameObject:
   m_ObjectHideFlags: 0
@@ -7689,6 +7719,7 @@ GameObject:
   - component: {fileID: 1181896828}
   - component: {fileID: 1181896829}
   - component: {fileID: 1181896830}
+  - component: {fileID: 1181896831}
   m_Layer: 0
   m_Name: tanque_azul
   m_TagString: Azul
@@ -7782,6 +7813,8 @@ Transform:
   m_LocalPosition: {x: -7.8, y: -4, z: 0}
   m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children:
+  - {fileID: 1963203390}
+  - {fileID: 764045450}
   - {fileID: 18281140}
   - {fileID: 1611813272}
   m_Father: {fileID: 0}
@@ -7799,15 +7832,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 10000
+  m_LinearDrag: 0.9
+  m_AngularDrag: 0.9
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!114 &1181896829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7817,10 +7850,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1181896824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca17ea9ef2b9e64e8ca9ec3b062e29f, type: 3}
+  m_Script: {fileID: 11500000, guid: c55dd130fb51b694ba7347aa2b6d59b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 2
+  fuerza: 20000
+  oruga_izquierda: {fileID: 764045450}
+  oruga_derecha: {fileID: 1963203390}
   teclaArriba: 119
   teclaDerecha: 100
   teclaAbajo: 115
@@ -7842,6 +7877,17 @@ MonoBehaviour:
   baseTanque: {fileID: 674373983}
   inicioTanque: {fileID: 1614343392}
   disparar: 32
+--- !u!247 &1181896831
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181896824}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 0
 --- !u!1 &1496924525
 GameObject:
   m_ObjectHideFlags: 0
@@ -7970,13 +8016,13 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 10000
-  m_LinearDrag: 0.95
+  m_LinearDrag: 0.9
   m_AngularDrag: 0.9
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &1496924530
 MonoBehaviour:
@@ -8007,7 +8053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55dd130fb51b694ba7347aa2b6d59b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerza: 17000
+  fuerza: 20000
   oruga_izquierda: {fileID: 993218790}
   oruga_derecha: {fileID: 1498515209}
   teclaArriba: 273
@@ -8150,7 +8196,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1181896827}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1611813273
 SpriteRenderer:
@@ -8431,6 +8477,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915226680}
   m_CullTransparentMesh: 0
+--- !u!1 &1963203389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963203390}
+  m_Layer: 0
+  m_Name: oruga_derecha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1963203390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963203389}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1181896827}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2044451690
 GameObject:
   m_ObjectHideFlags: 0
