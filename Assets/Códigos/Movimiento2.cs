@@ -25,7 +25,7 @@ public class Movimiento2 : MonoBehaviour
         rígido = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         // inicialmente, no hay movimiento de ningún tipo
         float rotación = 0f;

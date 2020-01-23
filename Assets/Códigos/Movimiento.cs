@@ -14,7 +14,7 @@ public class Movimiento : MonoBehaviour
         rígido = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         float h = 0;
         float v = 0;
