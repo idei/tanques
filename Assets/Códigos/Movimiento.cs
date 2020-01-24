@@ -44,7 +44,7 @@ public class Movimiento : MonoBehaviour
             rígido.rotation = Vector2.SignedAngle(Vector2.up, tempVect);
         }
 
-        tempVect = tempVect * velocidad * Time.fixedDeltaTime;
+        tempVect = tempVect * velocidad * Time.deltaTime;
         rígido.MovePosition(pos + tempVect);
     }
 }
